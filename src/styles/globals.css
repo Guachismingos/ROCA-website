@@ -2,22 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: quicksand;
-  src: url(../assets/fonts/Quicksand-VariableFont_wght.ttf) format("truetype"),
-    url(../assets/fonts/Quicksand-VariableFont_wght.woff) format("woff");
-}
-
-@font-face {
-  font-family: agency;
-  src: url(../assets/fonts/AGENCYR.TTF) format("truetype"),
-    url(../assets/fonts/AGENCYR.woff) format("woff");
-}
-
 * {
-  font-family: quicksand;
-  font-weight: normal;
-  box-sizing: border-box;
+  font-family: agency fb;
 }
 
 .header {
@@ -31,6 +17,7 @@
   clip-path: polygon(100% 0, 0% 0%, 80% 100%);
 }
 
+
 #__next {
   @apply flex flex-col flex-1 pt-24;
 }
@@ -42,3 +29,4 @@
 .page_content {
   @apply flex flex-col flex-1 bg-base-light;
 }
+

@@ -32,8 +32,7 @@ const Header = () => {
                     <li>
                       <Link
                         href={path}
-                        className="block py-2 pl-3 pr-4 text-white rounded lg:bg-transparent lg:p-0 dark:text-white font-[agency] text-lg"
-                        aria-current="page"
+                        className="py-2 pl-3 pr-4 text-xl antialiased rounded lg:bg-transparent lg:p-0 hover:text-primary-light"
                       >
                         {title}
                       </Link>
