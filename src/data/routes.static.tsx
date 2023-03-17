@@ -10,23 +10,23 @@ const routes: Route[] = [
     },  
     {
         title: "Conócenos",
-        path: "about"
+        path: "/about"
     },  
     {
         title: "Nuestro Equipo",
-        path: "team"
+        path: "/team"
     },  
     {
         title: "Servicios",
-        path: "services"
+        path: "/services"
     },  
     {
         title: "Proyectos",
-        path: "projects"
+        path: "/projects"
     },  
     {
         title: "Contáctenos",
-        path: "contact"
+        path: "/contact"
     },  
 ];
 

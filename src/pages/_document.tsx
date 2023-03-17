@@ -1,10 +1,8 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { lazy } from "react";
-
-const Header = lazy(() => import("@/shared/Header"));
-const Footer = lazy(() => import("@/shared/Footer"));
-
+import Footer from "@/shared/Footer";
+import Header from "@/shared/Header";
 export default function Document() {
+
   return (
     <Html lang="es" className="h-[100svh] flex flex-col">
       <Head/>
