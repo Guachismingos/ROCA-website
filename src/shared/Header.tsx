@@ -4,13 +4,17 @@ import logo from "../assets/images/logo.png";
 import routes from "@/data/routes.static";
 import { Fragment } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
 
-const Header = () => {  
+const Header = () => {
+
+  const router = useRouter();
+
   return (
-    <header className="drop-shadow-xl">
-      <div className="header absolute top-0 z-50 flex w-full px-10 py-4 h-36 lg:px-[6rem] xl:px-40 lg:py-6 md:px-20 bg-base-light">
+    <header className="relative z-50 drop-shadow-xl">
+      <div className="header absolute top-0 flex w-full px-10 py-4 h-36 lg:px-[6rem] xl:px-40 lg:py-6 md:px-20 bg-base-light">
         <div className="flex items-center flex-1 h-5/6">
           <nav className="flex items-center justify-between flex-1 h-full bg-base-light">
             <img className="xl:h-full h-3/6" src={logo.src} alt="ROCA" />
@@ -26,15 +30,24 @@ const Header = () => {
 
             <div className="flex-row items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1">
               <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-4 xl:space-x-8 lg:mt-0">
-                {routes.map(({ title, path }, idx) => (
-                  <Fragment key={path}>
+                {routes.map(({ title, path, scroll }, idx) => (
+                  <Fragment key={idx}>
                     <li>
-                      <Link
-                        href={path}
-                        className="py-2 pl-3 pr-4 text-xl antialiased lg:bg-transparent lg:p-0 hover:text-primary-light"
-                      >
-                        {title}
-                      </Link>
+                      {router.pathname != "/" ? (
+                        <Link
+                          href={path || ""}
+                          className="p-0 text-xl antialiased lg:bg-transparent hover:text-primary-light"
+                        >
+                          {title}
+                        </Link>
+                      ) : (
+                        <a
+                          className="p-0 text-xl antialiased lg:bg-transparent hover:text-primary-light"
+                          href={scroll}
+                        >
+                          {title}
+                        </a>
+                      )}
                     </li>
                     {idx < routes.length - 1 ? (
                       <span className="divider" />

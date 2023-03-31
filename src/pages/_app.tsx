@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 
 import { useEffect } from "react";
+import Layout from "@/shared/Layout";
 
 const agencyFont = localFont({
   src: "../assets/fonts/AGENCYR.woff",
@@ -18,7 +19,9 @@ console.log("222");
 
   return (
     <main className={agencyFont.className}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </main>
   );
 }

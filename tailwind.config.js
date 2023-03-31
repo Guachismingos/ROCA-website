@@ -11,6 +11,9 @@ module.exports = {
         light: "#FDFDFD",
         dark: "#1F2937"
       }
+    },
+    backgroundImage:{
+      "main-banner": "url(../assets/images/placeholders/32_9.svg)"
     }
   },
   plugins: [],

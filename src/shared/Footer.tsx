@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import routes from "@/data/routes.static";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   faInstagramSquare,
   faWhatsappSquare,
@@ -8,21 +9,27 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
-    <footer className=" flex flex-col gap-4 border-t-[black] border-t bg-base-dark lg:px-[6rem] xl:px-40 lg:py-6 md:px-20 px-10 py-4 text-[gray]">
+    <footer className="flex flex-col gap-4 border-t-[black] border-t bg-base-dark lg:px-[6rem] xl:px-40 lg:py-6 md:px-20 px-10 py-4 text-[gray] bottom-0 ">
       <div className="grid grid-cols-2 grid-rows-1 gap-4 md:grid-cols-4">
         <div className="flex flex-col md:col-span-1 md:row-span-1">
           <h2 className="text-xl text-base-light">Menú</h2>
           <hr className="h-px my-2 bg-[gray] border-0" />
           <ul className="flex-row items-center">
-            {routes.map(({ title, path }, idx) => (
+            {routes.map(({ title, path, scroll }, idx) => (
               <li key={idx}>
-                <Link
-                  href={path}
-                  className="p-0 text-xl antialiased lg:bg-transparent hover:text-primary-light hover:font-bold"
-                >
-                  {title}
-                </Link>
+                {router.pathname != "/" ? (
+                  <Link
+                    href={path || ""}
+                    className="p-0 text-xl antialiased lg:bg-transparent hover:text-primary-light hover:font-bold"
+                  >
+                    {title}
+                  </Link>
+                ) : (
+                  <a href={scroll}>{title}</a>
+                )}
               </li>
             ))}
           </ul>
@@ -37,18 +44,24 @@ const Footer = () => {
           <hr className="h-px my-2 bg-[gray] border-0" />
           <ul className="flex flex-row flex-1">
             <li className="flex justify-center flex-1 hover:text-primary-light">
-              <a href="https://www.instagram.com/roca_ingenieriacivil/">
-                <FontAwesomeIcon icon={faInstagramSquare} height="3rem" />
+              <a
+                className="text-5xl"
+                href="https://www.instagram.com/roca_ingenieriacivil/"
+              >
+                <FontAwesomeIcon icon={faInstagramSquare} />
               </a>
             </li>
             <li className="flex justify-center flex-1 hover:text-primary-light">
-              <a href="https://www.facebook.com/ingenierocivillesterrojas?mibextid=ZbWKwL">
-                <FontAwesomeIcon icon={faFacebookSquare} height="3rem" />
+              <a
+                className="text-5xl"
+                href="https://www.facebook.com/ingenierocivillesterrojas?mibextid=ZbWKwL"
+              >
+                <FontAwesomeIcon icon={faFacebookSquare} />
               </a>
             </li>
             <li className="flex justify-center flex-1 hover:text-primary-light">
-              <a href="https://wa.me/50685073374">
-                <FontAwesomeIcon icon={faWhatsappSquare} height="3rem" />
+              <a className="text-5xl" href="https://wa.me/50685073374">
+                <FontAwesomeIcon icon={faWhatsappSquare} />
               </a>
             </li>
           </ul>

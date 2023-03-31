@@ -19,13 +19,9 @@
 
 
 #__next {
-  @apply flex flex-col flex-1 pt-24;
+  @apply flex flex-col flex-1;
 }
 
 .divider {
   @apply border-l-2 rounded border-l-primary-light;
-}
-
-.page_content {
-  @apply flex flex-col flex-1 bg-base-light;
 }
