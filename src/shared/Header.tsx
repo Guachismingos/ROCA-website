@@ -19,15 +19,12 @@ const Header = () => {
           <nav className="flex items-center justify-between flex-1 h-full bg-base-light">
             <img className="xl:h-full h-3/6" src={logo.src} alt="ROCA" />
             <button
-              data-collapse-toggle="mobile-menu-2"
               type="button"
               className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-light dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mobile-menu-2"
-              aria-expanded="false"
+
             >
               <FontAwesomeIcon icon={faBars} height="2rem" />
             </button>
-
             <div className="flex-row items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1">
               <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-4 xl:space-x-8 lg:mt-0">
                 {routes.map(({ title, path, scroll }, idx) => (
